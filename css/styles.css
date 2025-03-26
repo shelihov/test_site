@@ -245,8 +245,8 @@ img {
 
 .stats__grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
 .stats__item {
@@ -326,7 +326,7 @@ img {
 
 .pricing__grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
@@ -934,5 +934,11 @@ img {
     
     .portfolio__slide img {
         height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .pricing__grid {
+        grid-template-columns: 1fr; /* 1 колонка на мобильных */
     }
 }
