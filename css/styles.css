@@ -98,11 +98,14 @@ img {
     color: var(--white);
 }
 
-/* === Шапка === */
-.header {
-    padding: 15px 0;
-    box-shadow: var(--shadow);
-    background-color: var(--white);
+header {
+    display: flex;
+    flex-wrap: nowrap; /* Запрещаем перенос элементов */
+    padding: 20px 0;
+    justify-content: space-between; /* Распределяем элементы по ширине */
+    align-items: center; /* Выравниваем элементы по вертикали */
+    gap: 10px; /* Отступы между элементами */
+    width: 100%; /* Убедитесь, что header занимает всю ширину */
 }
 
 .header__content {
@@ -939,6 +942,6 @@ img {
 
 @media (max-width: 768px) {
     .pricing__grid {
-        grid-template-columns: 1fr; /* 1 колонка на мобильных */
+        grid-template-columns: 1fr;
     }
 }
