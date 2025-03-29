@@ -21,29 +21,29 @@
         <div class="container">
             <div class="header__content">
                 <div class="header__logo">
-                    <img src="https://ext.same-assets.com/716728764/310276894.jpeg" alt="Логотип компании" class="header__logo-img">
+                    <img src="image/big_logo.svg" alt="Логотип компании" class="header__logo-img">
                     <div class="header__logo-text">
-                        <p>СтройЗабор62</p>
                         <p>Монтаж заборов всех видов</p>
                     </div>
                 </div>
                 
                 <div class="header__info">
-                    <div class="header__schedule">
-                        <p class="header__schedule-title">Прием заявок</p>
-                        <p class="header__schedule-time">Пн-Вс: 8.00-20.00</p>
-                    </div>
-                    
                     <div class="header__contact">
-                        <p class="header__contact-title">Консультация специалиста</p>
                         <a href="tel:+74950000000" class="header__phone">
-                            <img src="https://ext.same-assets.com/716728764/373670496.svg" alt="Телефон" class="header__phone-icon">
+                            <img src="image/telephone_icon.png" alt="Телефон" class="header__phone-icon">
                             +7(495)000-00-00
                         </a>
                     </div>
+                    <div class="header__messengers">
+                        <a href="https://wa.me/74950000000" class="header__messenger-btn" target="_blank" aria-label="WhatsApp">
+                            <img src="/image/whatsapp.png" alt="WhatsApp">
+                        </a>
+                        <a href="https://t.me/username" class="header__messenger-btn" target="_blank" aria-label="Telegram">
+                            <img src="/image/telegram.png" alt="Telegram">
+                        </a>
+                    </div>
+                    <button class="btn btn--primary header__callback-btn" id="callbackBtn">Заказать звонок</button>
                 </div>
-                
-                <button class="btn btn--primary header__callback-btn" id="callbackBtn">Заказать звонок</button>
             </div>
         </div>
     </header>
@@ -186,10 +186,14 @@
                 <div class="pricing__grid">
                     <div class="price-card">
                         <div class="price-card__image">
-                            <img src="https://ext.same-assets.com/716728764/1048180444.jpeg" alt="Забор из оцинкованной сетки рабица">
+                            <img src="image/rabica.svg" alt="Забор из оцинкованной сетки рабица">
                         </div>
                         <h3 class="price-card__title">Забор из оцинкованной сетки рабица</h3>
-                        <p class="price-card__desc">Экономичное решение для дачи – простой и бюджетный вариант. Подходит для обозначения границ участка.</p>
+                        <p class="price-card__desc">Забор из рабицы отличается доступной ценой, простотой установки 
+                            и долговечностью. Он обеспечивает хорошую вентиляцию и освещённость участка, не 
+                            создавая эффекта "глухой стены". Такой забор устойчив к коррозии (при использовании оцинкованной 
+                            или покрытой ПВХ сетки) и подходит для временного или постоянного 
+                            ограждения садов, огородов, строительных площадок и других территорий.</p>
 
                         <div class="price-card__ratings">
                             <div class="price-card__rating">
@@ -234,10 +238,14 @@
                     </div>
                     <div class="price-card">
                         <div class="price-card__image">
-                            <img src="https://ext.same-assets.com/716728764/3378116783.jpeg" alt="Забор из одностороннего профнастила">
+                            <img src="image/prof_list.svg" alt="Забор из одностороннего профнастила">
                         </div>
-                        <h3 class="price-card__title">Забор из одностороннего профнастила</h3>
-                        <p class="price-card__desc">Профнастил – это надежно! Прочный материал с длительным сроком службы. Устойчив к коррозии.</p>
+                        <h3 class="price-card__title">Забор из профнастила</h3>
+                        <p class="price-card__desc">Забор из профнастила отличается высокой прочностью, долговечностью и 
+                            устойчивостью к коррозииё. Он обеспечивает полную 
+                            приватность, так как не имеет зазоров, и возможностью выбора цвета. Такой забор прост в установке, не требует сложного ухода 
+                            и подходит для различных климатических условий, что делает его универсальным 
+                            решением для ограждения частных домов или промышленных объектов.</p>
 
                         <div class="price-card__ratings">
                             <div class="price-card__rating">
@@ -247,7 +255,7 @@
                                     <span class="price-card__star price-card__star--filled"></span>
                                     <span class="price-card__star price-card__star--filled"></span>
                                     <span class="price-card__star price-card__star--filled"></span>
-                                    <span class="price-card__star"></span>
+                                    <span class="price-card__star price-card__star--filled"></span>
                                 </div>
                             </div>
                             <div class="price-card__rating">
@@ -282,10 +290,16 @@
                     </div>
                     <div class="price-card">
                         <div class="price-card__image">
-                            <img src="https://ext.same-assets.com/716728764/3378116783.jpeg" alt="Забор из одностороннего профнастила">
+                            <img src="image/euro.svg" alt="Забор из одностороннего профнастила">
                         </div>
                         <h3 class="price-card__title">Забор из металлического штакетника</h3>
-                        <p class="price-card__desc">Металлический штакетник – это надежно! Прочный материал с длительным сроком службы. Устойчив к коррозии.</p>
+                        <p class="price-card__desc">Забор из евроштакетника сочетает в себе прочность, долговечность 
+                            и эстетичный внешний вид.
+                            Такой забор обеспечивает хорошую вентиляцию и освещённость участка, пропуская 
+                            воздух и свет, но при этом сохраняет приватность. Евроштакетник доступен в различных 
+                            цветах и формах, что позволяет подобрать дизайн под любой стиль участка, а также легко 
+                            монтируется, что делает его практичным и универсальным решением для
+                             ограждения частных домов, дач и других территорий.</p>
 
                         <div class="price-card__ratings">
                             <div class="price-card__rating">
@@ -304,8 +318,8 @@
                                     <span class="price-card__star price-card__star--filled"></span>
                                     <span class="price-card__star price-card__star--filled"></span>
                                     <span class="price-card__star price-card__star--filled"></span>
-                                    <span class="price-card__star"></span>
-                                    <span class="price-card__star"></span>
+                                    <span class="price-card__star price-card__star--filled"></span>
+                                    <span class="price-card__star price-card__star--filled"></span>
                                 </div>
                             </div>
                             <div class="price-card__rating">
@@ -313,8 +327,8 @@
                                 <div class="price-card__stars">
                                     <span class="price-card__star price-card__star--filled"></span>
                                     <span class="price-card__star price-card__star--filled"></span>
-                                    <span class="price-card__star price-card__star--filled"></span>
-                                    <span class="price-card__star price-card__star--filled"></span>
+                                    <span class="price-card__star"></span>
+                                    <span class="price-card__star"></span>
                                     <span class="price-card__star"></span>
                                 </div>
                             </div>
@@ -322,7 +336,7 @@
 
                         <div class="price-card__price">
                             <span class="price-card__price-label">Цена:</span>
-                            <span class="price-card__price-value">1700</span>
+                            <span class="price-card__price-value">1800</span>
                             <span class="price-card__price-unit">руб. за м²</span>
                         </div>
 
@@ -331,10 +345,16 @@
 
                     <div class="price-card">
                         <div class="price-card__image">
-                            <img src="https://ext.same-assets.com/716728764/3378116783.jpeg" alt="Забор из одностороннего профнастила">
+                            <img src="image/3d_setka.svg" alt="Забор из одностороннего профнастила">
                         </div>
                         <h3 class="price-card__title">Забор 3D-сетки</h3>
-                        <p class="price-card__desc">3D-сетка – это надежно! Прочный материал с длительным сроком службы. Устойчив к коррозии.</p>
+                        <p class="price-card__desc">Забор из 3D-сетки обладает высокой прочностью благодаря специальной 
+                            конструкции с изгибами, которые усиливают жесткость. Он устойчив к коррозии 
+                            за счет оцинкованного покрытия или полимерного слоя, что обеспечивает долговечность. 
+                            Такой забор прост в установке, имеет современный и эстетичный внешний вид, а также 
+                            обеспечивает хорошую видимость и вентиляцию участка. Он 
+                            идеально подходит для ограждения частных территорий, 
+                            спортивных площадок, парков и промышленных объектов.</p>
 
                         <div class="price-card__ratings">
                             <div class="price-card__rating">
@@ -353,7 +373,7 @@
                                     <span class="price-card__star price-card__star--filled"></span>
                                     <span class="price-card__star price-card__star--filled"></span>
                                     <span class="price-card__star price-card__star--filled"></span>
-                                    <span class="price-card__star"></span>
+                                    <span class="price-card__star price-card__star--filled"></span>
                                     <span class="price-card__star"></span>
                                 </div>
                             </div>
@@ -363,7 +383,7 @@
                                     <span class="price-card__star price-card__star--filled"></span>
                                     <span class="price-card__star price-card__star--filled"></span>
                                     <span class="price-card__star price-card__star--filled"></span>
-                                    <span class="price-card__star price-card__star--filled"></span>
+                                    <span class="price-card__star"></span>
                                     <span class="price-card__star"></span>
                                 </div>
                             </div>
@@ -371,7 +391,7 @@
 
                         <div class="price-card__price">
                             <span class="price-card__price-label">Цена:</span>
-                            <span class="price-card__price-value">2000</span>
+                            <span class="price-card__price-value">1600</span>
                             <span class="price-card__price-unit">руб. за м²</span>
                         </div>
 
@@ -481,44 +501,50 @@
         </section>
 
         <!-- Контакты -->
-        <section class="contacts">
+        <section class="contacts-messager">
             <div class="container">
                 <h2 class="section-title">Наши контакты</h2>
                 
-                <div class="contacts__grid">
-                    <div class="contact-card">
-                        <div class="contact-card__header">
-                            <div class="contact-card__icon">
+                <div class="contacts-messager__grid">
+                    <div class="contacts-messager">
+                        <div class="contacts-messager__header">
+                            <div class="contacts-messager__icon">
                                 <img src="https://ext.same-assets.com/716728764/638861269.svg" alt="Телефон">
                             </div>
-                            <div class="contact-card__title">
+                            <div class="contacts-messager__title">
                                 <h3>Звоните нам</h3>
                                 <p>Пн-Вс: 9.00-20.00</p>
                             </div>
                         </div>
-                        <div class="contact-card__content">
-                            <a href="tel:+74950000000" class="contact-card__phone">+7(495)000-00-00</a>
-                            <ul class="contact-card__list">
+                        <div class="contacts-messager__content">
+                            <a href="tel:+74950000000" class="contacts-messager__phone">+7(495)000-00-00</a>
+                            <ul class="contacts-messager__list">
                                 <li>• Бесплатная консультация</li>
                                 <li>• Оперативный расчет стоимости</li>
                                 <li>• Согласование сроков выполнения работ</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="contact-card">
-                        <div class="contact-card__header">
-                            <div class="contact-card__icon">
+                    <div class="contacts-messager">
+                        <div class="contacts-messager__header">
+                            <div class="contacts-messager__icon">
                                 <img src="https://ext.same-assets.com/716728764/1006505361.svg" alt="Карта">
                             </div>
-                            <div class="contact-card__title">
-                                <h3>Приезжайте к нам</h3>
-                                <p>Офис компании</p>
+                            <div class="contacts-messager__title">
+                                <h3>Напишите нам</h3>
+                                <p>Наши соцсети</p>
                             </div>
                         </div>
-                        <div class="contact-card__content">
-                            <p class="contact-card__address">г. Москва, ул. Примерная, д. 123, офис 45</p>
-                            <div class="contact-card__map">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.326293371837!2d37.62097807678455!3d55.75362497318383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a50b315e573%3A0xa886bf5a3d9b2e68!2z0JzQvtGB0LrQvtCy0YHQutC40Lkg0JrRgNC10LzQu9GM!5e0!3m2!1sru!2sru!4v1716553882088!5m2!1sru!2sru" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div class="contacts-messager__content">
+                            <div class="contacts-messager__socials">
+                                <a href="https://wa.me/74950000000" class="contacts-messager__social-btn" target="_blank" aria-label="WhatsApp">
+                                    <img src="/image/whatsapp.png" alt="WhatsApp">
+                                    <span class="contacts-messager__social-btn_text">WhatsApp</span>
+                                </a>
+                                <a href="https://t.me/username" class="contacts-messager__social-btn" target="_blank" aria-label="Telegram">
+                                    <img src="/image/telegram.png" alt="Telegram">
+                                    <span class="contacts-messager__social-btn_text">Telegram</span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -548,7 +574,7 @@
             </div>
             
             <div class="footer__bottom">
-                <p class="footer__copyright">© 2024 Забор из профнастила. Все права защищены.</p>
+                <p class="footer__copyright">© 2024 СтройЗабор62</p>
                 <div class="footer__links">
                     <a href="#" class="footer__link">Политика конфиденциальности</a>
                     <a href="#" class="footer__link">Пользовательское соглашение</a>
