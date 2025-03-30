@@ -333,7 +333,9 @@ header {
 
 .services__grid {
     display: flex;
+    flex-wrap: nowrap; /* Запрещаем перенос элементов */
     justify-content: space-between;
+    max-width: 100%; /* Ограничиваем ширину контейнера */
     gap: 20px;
 }
 
@@ -491,7 +493,9 @@ header {
 
 .benefits__grid {
     display: flex;
+    flex-wrap: nowrap; /* Запрещаем перенос элементов */
     justify-content: space-between;
+    max-width: 100%; /* Ограничиваем ширину контейнера */
     gap: 20px;
 }
 
