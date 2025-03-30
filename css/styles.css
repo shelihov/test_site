@@ -976,6 +976,14 @@ header {
     .header__phone {
         justify-content: flex-start;
     }
+
+    .services__grid {
+        flex-flow: column wrap;
+    }
+    
+    .benefits__grid {
+        flex-flow: column wrap;
+    }
 }
 
 @media (min-width: 768px) {
@@ -1015,11 +1023,11 @@ header {
     }
     
     .services__grid {
-        flex-flow: column wrap;
+        flex-flow: row wrap;
     }
     
     .benefits__grid {
-        flex-flow: column wrap;
+        flex-flow: row wrap;
     }
     
     .workflow__step {
