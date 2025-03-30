@@ -104,7 +104,6 @@ header {
     padding: 10px 0;
     justify-content: space-between; /* Распределяем элементы по ширине */
     align-items: center; /* Выравниваем элементы по вертикали */
-    
     width: 100%; /* Убедитесь, что header занимает всю ширину */
 }
 
@@ -117,7 +116,6 @@ header {
 .header__logo {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
 }
 
 .header__logo-img {
@@ -128,6 +126,7 @@ header {
 .header__logo-text {
     font-size: 14px;
     color: var(--text-light);
+    margin-top: 5%;
 }
 
 .header__info {
@@ -156,16 +155,52 @@ header {
     gap: 10px;
     margin-right: 15px;
     margin: 15px;
+    
 }
 
 .header__messenger-btn {
-    width: 44px;
-    height: 44px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--black);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.header__messenger-btn:hover {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.header__messenger-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 .header__callback-btn {
     width: 100%;
     max-width: 220px;
-    margin: 15px;
+    margin: 15px 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--white);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header__callback-btn:hover {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+    transform: translateY(-3px);
+    color: var(--black);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.header__callback-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* === Главная секция === */
@@ -180,6 +215,9 @@ header {
     align-items: center;
 }
 
+.hero__bonus {
+    color: #bc4040;
+}
 .hero__text {
     text-align: center;
     margin-bottom: 30px;
@@ -226,6 +264,23 @@ header {
 .hero__btn {
     padding: 15px 30px;
     font-size: 18px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--white);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero__btn:hover {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+    color: var(--black);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.hero__btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .hero__image {
@@ -236,7 +291,7 @@ header {
 /* === Статистика === */
 .stats {
     padding: 60px 0;
-    background-color: var(--white);
+    background-color: var(--light-bg);
 }
 
 .stats__grid {
@@ -426,7 +481,7 @@ header {
 /* === Преимущества === */
 .benefits {
     padding: 60px 0;
-    background-color: var(--light-bg);
+    background-color: var(--white);
 }
 
 .benefits__subtitle {
@@ -527,7 +582,7 @@ header {
 /* === Портфолио === */
 .portfolio {
     padding: 60px 0;
-    background-color: var(--white);
+    background-color: var(--light-bg);
 }
 
 .portfolio__slider {
@@ -704,10 +759,11 @@ header {
 
 .contacts-messager__phone {
     display: block;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 700;
     color: var(--text-color);
     margin-bottom: 15px;
+    overflow: hidden;
 }
 
 .contacts-messager__list {
@@ -722,14 +778,12 @@ header {
 }
 
 .contacts-messager__socials {
-    display: flex;
-    align-items: left;
-    margin-top: 20px;
-    flex-wrap: wrap;
-    gap: 10px;  
+    display: grid; 
+    gap: 10px;
 }
 
 .contacts-messager__social-btn {
+    display: flex;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -742,6 +796,8 @@ header {
 .contacts-messager__social-btn_text {
     color: var(--black);
     font-size: 20px;
+    margin-top: 15%;
+    margin-left: 10%;
 }
 
 .contacts-messager__social-btn:hover {
@@ -776,13 +832,14 @@ header {
 }
 
 .footer__logo-img {
-    width: 40px;
-    height: 40px;
+    width: 150px;
     margin-right: 10px;
 }
 
 .footer__logo-text {
     font-size: 14px;
+    color: var(--text-black);
+    margin-top: 5%;
 }
 
 .footer__phone {

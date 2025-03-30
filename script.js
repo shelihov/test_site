@@ -63,33 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const slides = portfolioSlider.querySelectorAll('.portfolio__slide');
         let currentSlide = 0;
         
-        // Дополнительные слайды
-        const additionalImages = [
-            {
-                src: 'https://ext.same-assets.com/716728764/1048180444.jpeg',
-                alt: 'Сетка рабица'
-            },
-            {
-                src: 'https://ext.same-assets.com/716728764/3378116783.jpeg',
-                alt: 'Профнастил односторонний'
-            },
-            {
-                src: 'https://ext.same-assets.com/716728764/1108787104.jpeg',
-                alt: 'Металлический штакетник'
-            },
-            {
-                src: 'https://ext.same-assets.com/716728764/2232615900.jpeg',
-                alt: 'ПВХ забор'
-            }
-        ];
-        
-        // Добавляем дополнительные слайды
-        additionalImages.forEach(function(image) {
-            const slide = document.createElement('div');
-            slide.className = 'portfolio__slide';
-            slide.innerHTML = `<img src="${image.src}" alt="${image.alt}">`;
-            portfolioSlider.appendChild(slide);
-        });
         
         // Обновляем количество слайдов
         const totalSlides = portfolioSlider.querySelectorAll('.portfolio__slide').length;
