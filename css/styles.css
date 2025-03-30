@@ -1015,11 +1015,11 @@ header {
     }
     
     .services__grid {
-        grid-template-columns: repeat(2, 1fr);
+        flex-flow: column wrap;
     }
     
     .benefits__grid {
-        grid-template-columns: repeat(3, 1fr);
+        flex-flow: column wrap;
     }
     
     .workflow__step {
