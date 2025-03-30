@@ -333,8 +333,8 @@ header {
 
 .services__grid {
     display: flex;
-    flex-wrap: nowrap; /* Запрещаем перенос элементов */
-    justify-content: space-between;
+    flex-flow: row nowrap; /* Разрешаем перенос элементов */
+    justify-content: space-between; /* Распределяем элементы равномерно */
     max-width: 100%; /* Ограничиваем ширину контейнера */
     gap: 20px;
 }
@@ -493,8 +493,8 @@ header {
 
 .benefits__grid {
     display: flex;
-    flex-wrap: nowrap; /* Запрещаем перенос элементов */
-    justify-content: space-between;
+    flex-flow: row nowrap; /* Разрешаем перенос элементов */
+    justify-content: space-between; /* Распределяем элементы равномерно */
     max-width: 100%; /* Ограничиваем ширину контейнера */
     gap: 20px;
 }
@@ -980,6 +980,7 @@ header {
     .header__phone {
         justify-content: flex-start;
     }
+
 }
 
 @media (min-width: 768px) {
@@ -1082,5 +1083,15 @@ header {
 @media (max-width: 768px) {
     .pricing__grid {
         grid-template-columns: 1fr;
+    }
+
+    .benefits__grid {
+        flex-flow: column wrap;
+        justify-content: space-between;
+    }
+
+    .services__grid {
+        flex-flow: column wrap;
+        justify-content: space-between;
     }
 }
