@@ -332,8 +332,8 @@ header {
 }
 
 .services__grid {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    justify-content: space-between;
     gap: 20px;
 }
 
@@ -490,9 +490,9 @@ header {
 }
 
 .benefits__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .benefit-card {
