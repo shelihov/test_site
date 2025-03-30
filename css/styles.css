@@ -291,7 +291,7 @@ header {
 /* === Статистика === */
 .stats {
     padding: 60px 0;
-    background-color: var(--light-bg);
+    background-color: var(--white);
 }
 
 .stats__grid {
@@ -481,7 +481,7 @@ header {
 /* === Преимущества === */
 .benefits {
     padding: 60px 0;
-    background-color: var(--white);
+    background-color: var(--light-bg);
 }
 
 .benefits__subtitle {
@@ -532,7 +532,7 @@ header {
 /* === Рабочий процесс === */
 .workflow {
     padding: 60px 0;
-    background-color: var(--white);
+    background-color: var(--light-bg);
 }
 
 .workflow__steps {
@@ -582,7 +582,7 @@ header {
 /* === Портфолио === */
 .portfolio {
     padding: 60px 0;
-    background-color: var(--light-bg);
+    background-color: var(--white);
 }
 
 .portfolio__slider {
@@ -712,9 +712,9 @@ header {
 
 /* === Контакты мессенджеры === */
 .contacts-messager__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .contacts-messager {
