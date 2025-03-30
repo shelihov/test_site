@@ -978,11 +978,11 @@ header {
     }
 
     .services__grid {
-        flex-flow: column wrap;
+        flex-flow: row wrap;
     }
     
     .benefits__grid {
-        flex-flow: column wrap;
+        flex-flow: row wrap;
     }
 }
 
@@ -1023,11 +1023,11 @@ header {
     }
     
     .services__grid {
-        flex-flow: row wrap;
+        flex-flow: column wrap;
     }
     
     .benefits__grid {
-        flex-flow: row wrap;
+        flex-flow: column wrap;
     }
     
     .workflow__step {
