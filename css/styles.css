@@ -1018,14 +1018,6 @@ header {
         grid-template-columns: repeat(2, 1fr);
     }
     
-    .services__grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .benefits__grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
     .workflow__step {
         flex-direction: row;
         text-align: left;
