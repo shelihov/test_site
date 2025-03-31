@@ -132,7 +132,7 @@ header {
 .header__info {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: center;  
 }
 
 .header__phone {    
@@ -152,12 +152,11 @@ header {
     justify-content: center;
     gap: 7%;
     margin: 5%;
-    
 }
 
 .header__messenger-btn {
-    width: 50px;
-    height: 50px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
     color: var(--black);
@@ -177,7 +176,6 @@ header {
 }
 
 .header__callback-btn {
-    width: 100%;
     max-width: 220px;
     margin: 15px 0;
     background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
