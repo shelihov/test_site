@@ -44,12 +44,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Кнопки "Подробнее" в карточках услуг
-    const serviceButtons = document.querySelectorAll('.service-card__btn');
-    if (serviceButtons.length > 0) {
-        serviceButtons.forEach(function(button) {
-            button.addEventListener('click', function() {
-                const serviceName = this.closest('.service-card').querySelector('.service-card__title').textContent;
-                alert(`Вы выбрали услугу: ${serviceName}. В реальном проекте здесь будет открываться страница с подробной информацией.`);
+    const serviceButtons = document.querySelectorAll('.price-card__btn');
+    const modal = document.getElementById('contacts-messager'); // Укажите ID элемента, к которому нужно прокрутить
+
+    if (modal) {
+        serviceButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                modal.scrollIntoView({ behavior: 'smooth' }); // Плавная прокрутка к элементу
             });
         });
     }

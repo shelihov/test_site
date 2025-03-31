@@ -131,9 +131,8 @@ header {
 
 .header__info {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    margin-bottom: 15px;
 }
 
 .header__phone {    
@@ -146,15 +145,13 @@ header {
 .header__phone-icon {
     width: 20px;
     height: 20px;
-    margin-right: 5px;
 }
 .header__messengers {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    margin-right: 15px;
-    margin: 15px;
+    gap: 7%;
+    margin: 5%;
     
 }
 
@@ -205,7 +202,9 @@ header {
 /* === Главная секция === */
 .hero {
     padding: 60px 0;
-    background-color: var(--light-bg);
+    background-image: url('../image/photo4.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .hero__content {
@@ -220,6 +219,9 @@ header {
 .hero__text {
     text-align: center;
     margin-bottom: 30px;
+    background-color: #ffffffbc;
+    border-radius: 10px;
+    padding: 5%;
 }
 
 .hero__title {
@@ -285,43 +287,6 @@ header {
 .hero__image {
     width: 100%;
     max-width: 500px;
-}
-
-/* === Статистика === */
-.stats {
-    padding: 60px 0;
-    background-color: var(--white);
-}
-
-.stats__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.stats__item {
-    text-align: center;
-    padding: 20px;
-}
-
-.stats__number {
-    font-size: 36px;
-    font-weight: 700;
-    display: inline-block;
-}
-
-.stats__number--primary {
-    color: var(--primary-color);
-}
-
-.stats__label {
-    font-size: 16px;
-    margin-left: 5px;
-}
-
-.stats__desc {
-    margin-top: 10px;
-    font-size: 14px;
 }
 
 /* === Услуги === */
@@ -419,38 +384,6 @@ header {
     margin-bottom: 15px;
 }
 
-.price-card__ratings {
-    margin-bottom: 15px;
-}
-
-.price-card__rating {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5px;
-}
-
-.price-card__rating-title {
-    font-size: 14px;
-}
-
-.price-card__stars {
-    display: flex;
-}
-
-.price-card__star {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    margin-left: 2px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23cccccc' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'%3E%3C/polygon%3E%3C/svg%3E");
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.price-card__star--filled {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23c0a042' stroke='%23c0a042' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'%3E%3C/polygon%3E%3C/svg%3E");
-}
 
 .price-card__price {
     display: flex;
@@ -478,110 +411,6 @@ header {
 .price-card__btn {
     width: 100%;
 }
-
-/* === Преимущества === */
-.benefits {
-    padding: 60px 0;
-    background-color: var(--light-bg);
-}
-
-.benefits__subtitle {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 40px;
-}
-
-.benefits__grid {
-    display: flex;
-    flex-flow: row nowrap; /* Разрешаем перенос элементов */
-    justify-content: space-between; /* Распределяем элементы равномерно */
-    max-width: 100%; /* Ограничиваем ширину контейнера */
-    gap: 20px;
-}
-
-.benefit-card {
-    background-color: var(--white);
-    border-radius: 5px;
-    padding: 30px;
-    text-align: center;
-    box-shadow: var(--shadow);
-}
-
-.benefit-card__icon {
-    width: 64px;
-    height: 64px;
-    background-color: #f8eed0;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px;
-}
-
-.benefit-card__icon img {
-    width: 32px;
-    height: 32px;
-}
-
-.benefit-card__title {
-    font-size: 22px;
-    margin-bottom: 15px;
-}
-
-.benefit-card__desc {
-    font-size: 15px;
-}
-
-/* === Рабочий процесс === */
-.workflow {
-    padding: 60px 0;
-    background-color: var(--light-bg);
-}
-
-.workflow__steps {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.workflow__step {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-.workflow__step-icon {
-    width: 64px;
-    height: 64px;
-    background-color: #f8eed0;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 15px;
-}
-
-.workflow__step-icon img {
-    width: 32px;
-    height: 32px;
-}
-
-.workflow__step-number {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 5px;
-}
-
-.workflow__step-title {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.workflow__step-desc {
-    font-size: 15px;
-}
-
 /* === Портфолио === */
 .portfolio {
     padding: 60px 0;
@@ -638,8 +467,111 @@ header {
     right: 10px;
 }
 
+/* === Рабочий процесс === */
+.workflow {
+    padding: 60px 0;
+    background-color: var(--light-bg);
+}
+
+.workflow__steps {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.workflow__step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.workflow__step-icon {
+    width: 64px;
+    height: 64px;
+    background-color: #f8eed0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.workflow__step-icon img {
+    width: 32px;
+    height: 32px;
+}
+
+.workflow__step-number {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.workflow__step-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.workflow__step-desc {
+    font-size: 15px;
+}
+
+/* === Преимущества === */
+.benefits {
+    padding: 60px 0;
+    background-color: var(--white   );
+}
+
+.benefits__subtitle {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.benefits__grid {
+    display: flex;
+    flex-flow: row nowrap; /* Разрешаем перенос элементов */
+    justify-content: space-between; /* Распределяем элементы равномерно */
+    max-width: 100%; /* Ограничиваем ширину контейнера */
+    gap: 20px;
+}
+
+.benefit-card {
+    background-color: var(--white);
+    border-radius: 5px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.benefit-card__icon {
+    width: 64px;
+    height: 64px;
+    background-color: #f8eed0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.benefit-card__icon img {
+    width: 32px;
+    height: 32px;
+}
+
+.benefit-card__title {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.benefit-card__desc {
+    font-size: 15px;
+}
+
 /* === Контакты === */
-.contacts {
+#contacts {
     padding: 60px 0;
     background-color: var(--light-bg);
 }
@@ -816,6 +748,7 @@ header {
 
 /* === Футер === */
 .footer {
+    margin-top: 10%;
     padding: 40px 0;
     background-color: var(--secondary-color);
     color: var(--white);
