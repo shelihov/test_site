@@ -748,7 +748,6 @@ header {
 
 /* === Футер === */
 .footer {
-    margin-top: 10%;
     padding: 40px 0;
     background-color: var(--secondary-color);
     color: var(--white);
