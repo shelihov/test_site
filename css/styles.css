@@ -863,6 +863,53 @@ header {
     width: 100%;
 }
 
+/* === Отзывы === */
+.reviews {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.reviews__slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.reviews__slider-container {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.reviews__slide {
+    min-width: 100%;
+    text-align: center;
+}
+
+.reviews__slide img {
+    max-width: 50%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.reviews__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.reviews__arrow--prev {
+    left: 10%;
+}
+
+.reviews__arrow--next {
+    right: 10%;
+}
+
 /* === Адаптивность === */
 @media (min-width: 576px) {
     .header__content {

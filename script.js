@@ -126,4 +126,44 @@ document.addEventListener('DOMContentLoaded', function() {
             consultationForm.reset();
         });
     }
+
+    const reviewsSlider = document.getElementById('reviewsSlider');
+    const reviewsPrev = document.getElementById('reviewsPrev');
+    const reviewsNext = document.getElementById('reviewsNext');
+
+    let currentReviewIndex = 0;
+
+    const updateReviewsSlider = () => {
+        const slideWidth = reviewsSlider.children[0].offsetWidth;
+        reviewsSlider.style.transform = `translateX(-${currentReviewIndex * slideWidth}px)`;
+    };
+
+    reviewsPrev.addEventListener('click', () => {
+        if (currentReviewIndex > 0) {
+            currentReviewIndex--;
+            updateReviewsSlider();
+        }
+    });
+
+    reviewsNext.addEventListener('click', () => {
+        if (currentReviewIndex < reviewsSlider.children.length - 1) {
+            currentReviewIndex++;
+            updateReviewsSlider();
+        } else {
+            currentReviewIndex = 0; // Возврат к первому слайду
+            updateReviewsSlider();
+        }
+    });
+
+    // Автоматическое переключение слайдов
+    setInterval(() => {
+        if (currentReviewIndex < reviewsSlider.children.length - 1) {
+            currentReviewIndex++;
+        } else {
+            currentReviewIndex = 0; // Возврат к первому слайду
+        }
+        updateReviewsSlider();
+    }, 4000);
+
+    window.addEventListener('resize', updateReviewsSlider);
 });
