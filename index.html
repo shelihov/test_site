@@ -88,6 +88,41 @@
             </div>
         </section>
 
+        <!-- Наши работы -->
+        <section class="portfolio">
+            <div class="container">
+                <h2 class="section-title">Фото наших последних работ</h2>
+                
+                <div class="portfolio__slider">
+                    <div class="portfolio__slider-container" id="portfolioSlider">
+                        <div class="portfolio__slide">
+                            <img src="image/photo1.jpeg" alt="photo1">
+                        </div>
+                        <div class="portfolio__slide">
+                            <img src="image/photo2.jpeg" alt="photo2">
+                        </div>
+                        <div class="portfolio__slide">
+                            <img src="image/photo3.jpeg" alt="photo3">
+                        </div>
+                        <div class="portfolio__slide">
+                            <img src="image/photo4.jpeg" alt="photo4">
+                        </div>
+                        <div class="portfolio__slide">
+                            <img src="image/photo5.jpeg" alt="photo5">
+                        </div>
+                        <div class="portfolio__slide">
+                            <img src="image/photo6.jpeg" alt="photo6">
+                        </div>
+                        <div class="portfolio__slide">
+                            <img src="image/photo7.jpeg" alt="photo7">
+                        </div>
+                        <!-- Другие слайды будут добавлены через JavaScript -->
+                    </div>
+                    <button class="portfolio__arrow portfolio__arrow--prev" id="portfolioPrev">&#10094;</button>
+                    <button class="portfolio__arrow portfolio__arrow--next" id="portfolioNext">&#10095;</button>
+                </div>
+            </div>
+        </section>
 
         <!-- Услуги -->
         <section class="services">
@@ -203,41 +238,6 @@
                 </div>
             </div>
         </section>
-        <!-- Наши работы -->
-        <section class="portfolio">
-            <div class="container">
-                <h2 class="section-title">Фото наших последних работ</h2>
-                
-                <div class="portfolio__slider">
-                    <div class="portfolio__slider-container" id="portfolioSlider">
-                        <div class="portfolio__slide">
-                            <img src="image/photo1.jpeg" alt="photo1">
-                        </div>
-                        <div class="portfolio__slide">
-                            <img src="image/photo2.jpeg" alt="photo2">
-                        </div>
-                        <div class="portfolio__slide">
-                            <img src="image/photo3.jpeg" alt="photo3">
-                        </div>
-                        <div class="portfolio__slide">
-                            <img src="image/photo4.jpeg" alt="photo4">
-                        </div>
-                        <div class="portfolio__slide">
-                            <img src="image/photo5.jpeg" alt="photo5">
-                        </div>
-                        <div class="portfolio__slide">
-                            <img src="image/photo6.jpeg" alt="photo6">
-                        </div>
-                        <div class="portfolio__slide">
-                            <img src="image/photo7.jpeg" alt="photo7">
-                        </div>
-                        <!-- Другие слайды будут добавлены через JavaScript -->
-                    </div>
-                    <button class="portfolio__arrow portfolio__arrow--prev" id="portfolioPrev">&#10094;</button>
-                    <button class="portfolio__arrow portfolio__arrow--next" id="portfolioNext">&#10095;</button>
-                </div>
-            </div>
-        </section>
 
         <!-- Как строится работа -->
         <section class="workflow">
@@ -260,7 +260,7 @@
                             <img src="image/zamer_workflow.png" alt="Шаг 2">
                         </div>
                         <div class="workflow__step-content">
-                            <h3 class="workflow__step-number">2 шаг</h3>
+                            <h3 class="workflow__step-number">2 шаг</h4>
                             <h4 class="workflow__step-title">Выезд на Ваш участок</h4>
                             <p class="workflow__step-desc">Мы закупаем материал, самостоятельно доставляем и разгружаем его, при необходимости демонтируем старый забор.</p>
                         </div>
@@ -335,37 +335,25 @@
         </section>
 
         <!-- Контакты -->
-        <section id="contacts">
+        <section id="contacts" class="contacts">
             <div class="container">
-                <h2 class="section-title">Наши контакты</h2>
-                    <div class="contacts-messager">
-                        <div class="contacts-messager__header">
-                            <div class="contacts-messager__icon">
-                                <img src="image/telephone_icon.png" alt="Телефон">
-                            </div>
-                            <div class="contacts-messager__title">
-                                <h3>Звоните нам</h3>
-                                <p>Пн-Вс: 9.00-20.00</p>
-                            </div>
+                <h2 class="section-title">Свяжитесь с нами</h2>
+                <div class="contacts__content">
+                    <div class="contacts__info">
+                        <div class="contacts__icon">
+                            <img src="image/telephone_icon.png" alt="Телефон">
                         </div>
-                        <div class="contacts-messager__content">
-                            <a href="tel:+74950000000" class="contacts-messager__phone">+7(495)000-00-00</a>
-                            <ul class="contacts-messager__list">
-                                <li>• Бесплатная консультация</li>
-                                <li>• Оперативный расчет стоимости</li>
-                                <li>• Согласование сроков выполнения работ</li>
-                            </ul>
-                        </div>
-                        <div class="contacts-messager__socials">
-                            <a href="https://wa.me/74950000000" class="contacts-messager__social-btn" target="_blank" aria-label="WhatsApp">
+                        <p class="contacts__phone">+7 (495) 000-00-00</p>
+                        <div class="contacts__messengers">
+                            <a href="https://wa.me/74950000000" class="contacts__messenger-btn" target="_blank" aria-label="WhatsApp">
                                 <img src="image/whatsapp.png" alt="WhatsApp">
-                                <span class="contacts-messager__social-btn_text">WhatsApp</span>
                             </a>
-                            <a href="https://t.me/username" class="contacts-messager__social-btn" target="_blank" aria-label="Telegram">
+                            <a href="https://t.me/username" class="contacts__messenger-btn" target="_blank" aria-label="Telegram">
                                 <img src="image/telegram.png" alt="Telegram">
-                                <span class="contacts-messager__social-btn_text">Telegram</span>
                             </a>
                         </div>
+                    </div>
+                    <button class="btn btn--primary contacts__btn" id="consultationBtn">Получить консультацию</button>
                 </div>
             </div>
         </section>

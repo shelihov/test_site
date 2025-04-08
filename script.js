@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const callbackModal = document.getElementById('callbackModal');
     const closeCallbackModal = document.getElementById('closeCallbackModal');
     
-    const consultationBtn = document.getElementById('consultationBtn');
+    const consultationBtns = document.querySelectorAll('#consultationBtn');
     const consultationModal = document.getElementById('consultationModal');
     const closeConsultationModal = document.getElementById('closeConsultationModal');
     
@@ -19,18 +19,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Открытие и закрытие модального окна для консультации
-    if (consultationBtn && consultationModal && closeConsultationModal) {
-        consultationBtn.addEventListener('click', function() {
+    // Открытие модального окна для всех кнопок "Получить консультацию"
+    consultationBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
             consultationModal.classList.add('active');
         });
-        
-        closeConsultationModal.addEventListener('click', function() {
-            consultationModal.classList.remove('active');
-        });
-    }
-    
-    // Закрытие модальных окон при клике вне их содержимого
+    });
+
+    // Закрытие модального окна
+    closeConsultationModal.addEventListener('click', function() {
+        consultationModal.classList.remove('active');
+    });
+
+    // Закрытие модального окна при клике вне его содержимого
     document.addEventListener('click', function(event) {
         if (callbackModal && callbackModal.classList.contains('active') && 
             !event.target.closest('.modal__content') && !event.target.closest('#callbackBtn')) {
@@ -55,46 +56,51 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Слайдер изображений портфолио
-    const portfolioSlider = document.getElementById('portfolioSlider');
-    const portfolioPrev = document.getElementById('portfolioPrev');
-    const portfolioNext = document.getElementById('portfolioNext');
-    
-    if (portfolioSlider && portfolioPrev && portfolioNext) {
-        const slides = portfolioSlider.querySelectorAll('.portfolio__slide');
-        let currentSlide = 0;
-        
-        
-        // Обновляем количество слайдов
-        const totalSlides = portfolioSlider.querySelectorAll('.portfolio__slide').length;
-        
-        // Функция для переключения слайдов
-        function showSlide(index) {
-            if (index < 0) {
-                currentSlide = totalSlides - 1;
-            } else if (index >= totalSlides) {
-                currentSlide = 0;
-            } else {
-                currentSlide = index;
-            }
-            
-            portfolioSlider.style.transform = `translateX(${-currentSlide * 100}%)`;
-        }
-        
-        // Обработчики событий для кнопок
-        portfolioPrev.addEventListener('click', function() {
-            showSlide(currentSlide - 1);
-        });
-        
-        portfolioNext.addEventListener('click', function() {
-            showSlide(currentSlide + 1);
-        });
-        
-        // Автоматическое переключение слайдов
-        setInterval(function() {
-            showSlide(currentSlide + 1);
-        }, 5000);
+    // Функция debounce для оптимизации событий
+    function debounce(func, wait) {
+        let timeout;
+        return function (...args) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(this, args), wait);
+        };
     }
+
+    // Универсальная функция для слайдеров
+    function initSlider(sliderId, prevBtnId, nextBtnId, interval = 5000) {
+        const slider = document.getElementById(sliderId);
+        const prevBtn = document.getElementById(prevBtnId);
+        const nextBtn = document.getElementById(nextBtnId);
+
+        if (!slider || !prevBtn || !nextBtn) return;
+
+        let currentIndex = 0;
+
+        const updateSlider = () => {
+            const slideWidth = slider.children[0].offsetWidth;
+            slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        };
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : slider.children.length - 1;
+            updateSlider();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex < slider.children.length - 1) ? currentIndex + 1 : 0;
+            updateSlider();
+        });
+
+        setInterval(() => {
+            currentIndex = (currentIndex < slider.children.length - 1) ? currentIndex + 1 : 0;
+            updateSlider();
+        }, interval);
+
+        window.addEventListener('resize', debounce(updateSlider, 200));
+    }
+
+    // Инициализация слайдеров
+    initSlider('portfolioSlider', 'portfolioPrev', 'portfolioNext');
+    initSlider('reviewsSlider', 'reviewsPrev', 'reviewsNext');
     
     // Обработка отправки форм
     const callbackForm = document.getElementById('callbackForm');
@@ -126,44 +132,4 @@ document.addEventListener('DOMContentLoaded', function() {
             consultationForm.reset();
         });
     }
-
-    const reviewsSlider = document.getElementById('reviewsSlider');
-    const reviewsPrev = document.getElementById('reviewsPrev');
-    const reviewsNext = document.getElementById('reviewsNext');
-
-    let currentReviewIndex = 0;
-
-    const updateReviewsSlider = () => {
-        const slideWidth = reviewsSlider.children[0].offsetWidth;
-        reviewsSlider.style.transform = `translateX(-${currentReviewIndex * slideWidth}px)`;
-    };
-
-    reviewsPrev.addEventListener('click', () => {
-        if (currentReviewIndex > 0) {
-            currentReviewIndex--;
-            updateReviewsSlider();
-        }
-    });
-
-    reviewsNext.addEventListener('click', () => {
-        if (currentReviewIndex < reviewsSlider.children.length - 1) {
-            currentReviewIndex++;
-            updateReviewsSlider();
-        } else {
-            currentReviewIndex = 0; // Возврат к первому слайду
-            updateReviewsSlider();
-        }
-    });
-
-    // Автоматическое переключение слайдов
-    setInterval(() => {
-        if (currentReviewIndex < reviewsSlider.children.length - 1) {
-            currentReviewIndex++;
-        } else {
-            currentReviewIndex = 0; // Возврат к первому слайду
-        }
-        updateReviewsSlider();
-    }, 4000);
-
-    window.addEventListener('resize', updateReviewsSlider);
 });

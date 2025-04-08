@@ -86,6 +86,7 @@ img {
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s ease;
+    will-change: transform, background-color;
 }
 
 .btn--primary {
@@ -447,7 +448,7 @@ header {
 /* === Рабочий процесс === */
 .workflow {
     padding: 60px 0;
-    background-color: var(--light-bg);
+    background-color: var(--white);
 }
 
 .workflow__steps {
@@ -497,7 +498,7 @@ header {
 /* === Преимущества === */
 .benefits {
     padding: 60px 0;
-    background-color: var(--white   );
+    background-color: var(--light-bg);
 }
 
 .benefits__subtitle {
@@ -581,146 +582,6 @@ header {
     align-items: center;
     justify-content: center;
     margin-right: 15px;
-}
-
-.contact__icon img {
-    width: 24px;
-    height: 24px;
-}
-
-.contact__title h3 {
-    font-size: 18px;
-    margin-bottom: 5px;
-}
-
-.contact__title p {
-    font-size: 14px;
-    color: var(--text-light);
-    margin: 0;
-}
-
-.contact__phone {
-    display: block;
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--text-color);
-    margin-bottom: 15px;
-}
-
-.contact__list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.contact__list li {
-    margin-bottom: 8px;
-    font-size: 14px;
-}
-
-.contact__address {
-    margin-bottom: 15px;
-}
-
-/* === Контакты мессенджеры === */
-.contacts-messager__grid {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.contacts-messager {
-    background-color: var(--white);
-    border-radius: 5px;
-    padding: 30px;
-    box-shadow: var(--shadow);
-}
-
-.contacts-messager__header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.contacts-messager__icon {
-    width: 48px;
-    height: 48px;
-    background-color: #f8eed0;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 15px;
-}
-
-.contacts-messager__icon img {
-    width: 24px;
-    height: 24px;
-}
-
-.contacts-messager__title h3 {
-    font-size: 18px;
-    margin-bottom: 5px;
-}
-
-.contacts-messager__title p {
-    font-size: 14px;
-    color: var(--text-light);
-    margin: 0;
-}
-
-.contacts-messager__phone {
-    display: block;
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--text-color);
-    margin-bottom: 15px;
-    overflow: hidden;
-}
-
-.contacts-messager__list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.contacts-messager__list li {
-    margin-bottom: 8px;
-    font-size: 14px;
-}
-
-.contacts-messager__socials {
-    display: grid; 
-    gap: 10px;
-}
-
-.contacts-messager__social-btn {
-    display: flex;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    color: var(--black);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-.contacts-messager__social-btn_text {
-    color: var(--black);
-    font-size: 20px;
-    margin-top: 15%;
-    margin-left: 10%;
-}
-
-.contacts-messager__social-btn:hover {
-    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
-    transform: translateY(-3px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-}
-
-.contacts-messager__social-btn:active {
-    transform: translateY(0);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* === Футер === */
@@ -866,7 +727,7 @@ header {
 /* === Отзывы === */
 .reviews {
     padding: 50px 0;
-    background-color: #f9f9f9;
+    background-color: var(--white);
 }
 
 .reviews__slider {
@@ -908,6 +769,89 @@ header {
 
 .reviews__arrow--next {
     right: 10%;
+}
+
+/* === Контакты === */
+.contacts {
+    padding: 60px 0;
+    background-color: var(--light-bg);
+    text-align: center;
+}
+
+.contacts__content {
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.contacts__icon {
+    width: 64px;
+    height: 64px;
+    background-color: var(--primary-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px; /* Центрирование иконки */
+}
+
+.contacts__phone {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.contacts__messengers {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.contacts__messenger-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Добавлена анимация */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contacts__messenger-btn:hover {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    transform: translateY(-3px) scale(1.1); /* Увеличение при наведении */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.contacts__messenger-btn:active {
+    transform: translateY(0) scale(1); /* Возврат к исходному состоянию */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+contacts__btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--white);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+contacts__btn:hover {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+contacts__btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* === Адаптивность === */
