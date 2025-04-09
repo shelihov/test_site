@@ -682,6 +682,8 @@ header {
     width: 90%;
     max-width: 500px;
     padding: 30px;
+    overflow-y: auto; /* Прокрутка по вертикали */
+    max-height: 90%; /* Максимальная высота модального окна */
     border-radius: 5px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
@@ -830,27 +832,6 @@ header {
 
 .contacts__messenger-btn:active {
     transform: translateY(0) scale(1); /* Возврат к исходному состоянию */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-contacts__btn {
-    padding: 15px 30px;
-    font-size: 18px;
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    color: var(--white);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-contacts__btn:hover {
-    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
-    transform: translateY(-3px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-}
-
-contacts__btn:active {
-    transform: translateY(0);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 

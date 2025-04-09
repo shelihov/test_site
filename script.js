@@ -1,3 +1,5 @@
+console.log('script.js загружен');
+
 document.addEventListener('DOMContentLoaded', function() {
     // Модальные окна
     const callbackBtn = document.getElementById('callbackBtn');
@@ -105,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Обработка отправки форм
     const callbackForm = document.getElementById('callbackForm');
     const consultationForm = document.getElementById('consultationForm');
-    
+
     if (callbackForm) {
         callbackForm.addEventListener('submit', function(event) {
             event.preventDefault();
@@ -120,16 +122,69 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     if (consultationForm) {
-        consultationForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const name = document.getElementById('consultationName').value;
-            const phone = document.getElementById('consultationPhone').value;
-            const message = document.getElementById('consultationMessage').value;
-            
-            // В реальном проекте здесь бы отправлялся AJAX-запрос на сервер
-            alert(`Спасибо за запрос консультации, ${name}! Мы свяжемся с вами по номеру ${phone} в ближайшее время. Ваш вопрос: "${message || 'Не указан'}" будет передан специалисту.`);
-            consultationModal.classList.remove('active');
-            consultationForm.reset();
+        const submitButton = consultationForm.querySelector('button[type="submit"]');
+
+        const recaptchaContainer = document.querySelector('.g-recaptcha');
+
+        consultationForm.addEventListener('submit', async function(event) {
+            const recaptchaResponse = grecaptcha.getResponse();
+            const recaptchaError = document.getElementById('recaptchaError');
+
+            if (!recaptchaResponse) {
+                event.preventDefault();
+                if (!recaptchaError) {
+                    const errorElement = document.createElement('div');
+                    errorElement.id = 'recaptchaError';
+                    errorElement.style.color = 'red';
+                    errorElement.style.marginTop = '10px';
+                    errorElement.textContent = 'Пожалуйста, пройдите капчу перед отправкой формы.';
+                    recaptchaContainer.parentNode.insertBefore(errorElement, recaptchaContainer.nextSibling);
+                }
+                return;
+            }
+
+            if (recaptchaError) {
+                recaptchaError.remove();
+            }
+
+            const formData = new FormData(consultationForm);
+            formData.append('g-recaptcha-response', recaptchaResponse);
+
+            const response = await fetch('data.php', {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                alert('Форма успешно отправлена!');
+                consultationForm.reset();
+                grecaptcha.reset();
+            } else {
+                alert('Ошибка: ' + (result.error || 'Неизвестная ошибка'));
+            }
         });
+
+        const recaptchaCallback = function() {
+            submitButton.disabled = false;
+        };
+
+        window.recaptchaCallback = recaptchaCallback;
+        submitButton.disabled = true;
     }
+
+    // Добавление обработчиков для кнопок "Заказать" в блоке "типы заборов и цены"
+    const priceCardButtons = document.querySelectorAll('.price-card__btn');
+
+    priceCardButtons.forEach((button, index) => {
+        button.addEventListener('click', function() {
+            consultationModal.classList.add('active');
+
+            const materialSelect = consultationForm.querySelector('select[name="var_fence"]');
+            if (materialSelect) {
+                materialSelect.selectedIndex = index + 1;
+            }
+        });
+    });
 });

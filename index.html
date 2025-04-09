@@ -11,7 +11,9 @@
     <!-- Подключение стилей -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
-    
+    <!-- Подключение капчи -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <!-- Иконка сайта -->
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
@@ -175,7 +177,7 @@
                             <span class="price-card__price-value">1500</span>
                             <span class="price-card__price-unit">руб. за п.м.</span>
                         </div>
-                        <button class="btn btn--primary price-card__btn">Заказать</button>
+                        <button class="btn btn--primary price-card__btn" id="consultationBtn">Заказать</button>
                     </div>
 
                     <div class="price-card">
@@ -193,7 +195,7 @@
                             <span class="price-card__price-value">2200</span>
                             <span class="price-card__price-unit">руб. за п.м.</span>
                         </div>
-                        <button class="btn btn--primary price-card__btn">Заказать</button>
+                        <button class="btn btn--primary price-card__btn" id="consultationBtn">Заказать</button>
                     </div>
 
                     <div class="price-card">
@@ -213,7 +215,7 @@
                             <span class="price-card__price-value">2400</span>
                             <span class="price-card__price-unit">руб. за п.м.</span>
                         </div>
-                        <button class="btn btn--primary price-card__btn">Заказать</button>
+                        <button class="btn btn--primary price-card__btn" id="consultationBtn">Заказать</button>
                     </div>
 
                     <div class="price-card">
@@ -233,7 +235,7 @@
                             <span class="price-card__price-value">2000</span>
                             <span class="price-card__price-unit">руб. за п.м.</span>
                         </div>
-                        <button class="btn btn--primary price-card__btn">Заказать</button>
+                        <button class="btn btn--primary price-card__btn" id="consultationBtn">Заказать</button>
                     </div>
                 </div>
             </div>
@@ -389,35 +391,59 @@
     </footer>
 
     <!-- Модальные окна -->
-    <div class="modal" id="callbackModal">
-        <div class="modal__content">
-            <button class="modal__close" id="closeCallbackModal">&times;</button>
-            <h2 class="modal__title">Заказать обратный звонок</h2>
-            <form class="form" id="callbackForm">
-                <div class="form__group">
-                    <input type="text" class="form__input" id="callbackName" name="name" placeholder="Ваше имя" required>
-                </div>
-                <div class="form__group">
-                    <input type="tel" class="form__input" id="callbackPhone" name="phone" placeholder="Ваш телефон" required>
-                </div>
-                <button type="submit" class="btn btn--primary form__btn">Отправить</button>
-            </form>
-        </div>
-    </div>
-    
     <div class="modal" id="consultationModal">
         <div class="modal__content">
             <button class="modal__close" id="closeConsultationModal">&times;</button>
             <h2 class="modal__title">Получить консультацию</h2>
+            <h5 class="modal__subtitle">Заполните форму, мы посчитаем цену "под ключ" и свяжемся с Вами в течении 5 минут</h3>
             <form class="form" id="consultationForm">
                 <div class="form__group">
-                    <input type="text" class="form__input" id="consultationName" name="name" placeholder="Ваше имя" required>
+                    <input type="text" class="form__input" id="consultationName" name="name" placeholder="Ваше имя">
                 </div>
                 <div class="form__group">
-                    <input type="tel" class="form__input" id="consultationPhone" name="phone" placeholder="Ваш телефон" required>
+                    <input type="tel" class="form__input" id="consultationPhone" name="phone" placeholder="Ваш телефон" required pattern="\+?[0-9]{11}">
                 </div>
                 <div class="form__group">
-                    <textarea class="form__textarea" id="consultationMessage" name="message" placeholder="Ваш вопрос"></textarea>
+                    <input type="text" class="form__input" id="consultationAddress" name="address" placeholder="Адрес установки">
+                </div>
+                <div class="form__group">
+                    <span>Выберите материал: </span>
+                    <select name="var_fence">
+                        <option value="var_none">Не выбрано</option>
+                        <option value="var_1">Забор из сетки рабица</option>
+                        <option value="var_2">Забор из профнастила</option>
+                        <option value="var_3">Забор из евроштакетника</option>
+                        <option value="var_4">Забор из 3D-сетки</option>
+                    </select>
+                </div>
+                <div class="form__group">
+                    <input type="text" class="form__input" id="consultationSize" name="size_fence" placeholder="Длинна забора в погонных метрах">
+                </div>
+                <div class="form__group">
+                    <span>Ворота: </span>
+                    <select name="var_gate">
+                        <option value="var_none">Не выбрано</option>
+                        <option value="var_swing">Распашные</option>
+                        <option value="var_rollback">Откатные</option>
+                        <option value="var_no">Нет</option>
+                    </select>
+                </div>
+                <div class="form__group">
+                    <span>Калитка: </span>
+                    <select name="var_door">
+                        <option value="var_none">Не выбрано</option>
+                        <option value="var_yes">Да</option>
+                        <option value="var_no">Нет</option>
+                    </select>
+                </div>
+                <div class="form__group">
+                    <input type="text" class="form__input" id="consultationMessage" name="message" placeholder="Дополнительная информация (необязательно)">
+                </div>
+                <div class="form__group">
+                    <input type="checkbox" id="privacyPolicy" name="privacyPolicy" required>
+                    <label for="privacyPolicy">Я согласен с <a href="#">Политикой конфиденциальности</a></label>
+                </div>
+                <div class="g-recaptcha" data-sitekey="6Lcmy_MqAAAAAL5TScTosrzH-Z-s8VKtx-AKsKlC" data-callback="recaptchaCallback">
                 </div>
                 <button type="submit" class="btn btn--primary form__btn">Отправить</button>
             </form>
